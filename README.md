@@ -5,6 +5,9 @@
 
 **Folder "/StatsForViewing/CSVStats/" holds my csv stat files, as well as a compressed "part-r-00000" file (part-r-00000.tar.gz) in case user would like to view stats without running entire M/R job.**
 
+# AWS EMR Deployment video:
+ https://www.youtube.com/watch?v=nB1YE4yIUEc
+
 **To run entire M/R Program follow below, continue reading**
 
 # Instructions to run Hadoop M/R Job and produce .csv stat files from job's output:
