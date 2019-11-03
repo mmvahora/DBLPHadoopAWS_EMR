@@ -1,7 +1,7 @@
 # Moin Vahora
 # CS 441 HW2: Map/Reduce in Hadoop
 
-**In this assignment, we run a Map/Reduce job in Hadoop on the dblp.xml database. My Mapper is located in hw2Mapper.scala, and mr job Driver and Reducer class located in Begin.scala. The sharding of the database file is done by Hadoop framework, independent of the user. For more detailed information on code and logic, refer to in-file comments.**
+**In this assignment, we run a Map/Reduce job in Hadoop on the dblp.xml database. My Mapper is located in hw2Mapper.scala, and my job Driver and Reducer class located in Begin.scala. The sharding of the database file is done by Hadoop framework, independent of the user. The mapper reads in the XML, parses for authors,and then builds stats based on the entry. The <Key, Value> pair of my M/R job is <Text, Text> so I can store multiple comma separated values. The Key will be the author name, the Value will be AuthorshipScore, AvgCoAuthors, MaxCoAuthors, MinCoAuthors, and TotalEntries.  For more detailed information on code and logic, refer to in-file comments.**
 
 **Folder "/StatsForViewing/CSVStats/" holds my csv stat files, as well as a compressed "part-r-00000" file (part-r-00000.tar.gz) in case user would like to view stats without running entire M/R job.**
 
@@ -49,7 +49,7 @@ run
 
     part-r-00000 
 This file contains <Key, Value> pairs
-    as <Text, Text>, where the Key is the author name, and the Value is 4 comma separated stats(in order):
+    as <Text, Text>, where the Key is the author name, and the Value is 5 comma separated stats(in order):
 
         AuthorshipScore (Double)
         AvgCoAuthors (Double)
