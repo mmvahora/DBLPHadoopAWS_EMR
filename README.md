@@ -9,12 +9,16 @@
 
 # Instructions to run Hadoop M/R Job and produce .csv stat files from job's output:
 
+# PreReqs Needed:
+   Java JDK 1.8 + SBT (SimpleBuildTools)
+
 # 1.) 
 run 
 
     sbt assembly
 
    This will compile code, run unit tests, and produce a jar executable
+   **NOTE: This command might take a few seconds to run**
 
 # 2.) 
 Take jar file 
@@ -89,3 +93,10 @@ Once the "part-r-00000" is in the same directory as "produceStats.scala"
     top100AvgCoAuthors.csv
     bot100AuthorshipScores.csv
     bot100AvgCoAuthors.csv
+
+# IntelliJ Import:
+To import project into IntelliJ, first clone repo.
+Open IntelliJ, select "Import Project"
+Select directory "moin_vahora_hw2"
+Select "Import project from extrernal model", select "SBT" and press next
+Make sure Project JDK is set to 1.8, then press finish.
