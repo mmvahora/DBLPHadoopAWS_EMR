@@ -5,7 +5,7 @@
 
 **Folder "/StatsForViewing/CSVStats/" holds my csv stat files, as well as a compressed "part-r-00000" file (part-r-00000.tar.gz) in case user would like to view stats without running entire M/R job.**
 
-# To run entire M/R Program follow below, continue reading
+**To run entire M/R Program follow below, continue reading**
 
 # Instructions to run Hadoop M/R Job and produce .csv stat files from job's output:
 
@@ -95,8 +95,14 @@ Once the "part-r-00000" is in the same directory as "produceStats.scala"
     bot100AvgCoAuthors.csv
 
 # IntelliJ Import:
-To import project into IntelliJ, first clone repo.
-Open IntelliJ, select "Import Project"
-Select directory "moin_vahora_hw2"
-Select "Import project from extrernal model", select "SBT" and press next
-Make sure Project JDK is set to 1.8, then press finish.
+1.) To import project into IntelliJ, first clone repo.
+
+2.) Open IntelliJ, select "Import Project"
+
+3.) Select directory "moin_vahora_hw1"
+
+4.) Select "Import project from extrernal model", select "SBT" and press next
+
+5.) Make sure Project JDK is set to 1.8, then press finish.
+
+6.) IntelliJ should build project with no problems. 
