@@ -1,11 +1,9 @@
 # Moin Vahora
 # CS 441 HW2: Map/Reduce in Hadoop
 
-**In this assignment, we run a Map/Reduce job in Hadoop on the dblp.xml database.
-My Mapper is located in hw2Mapper.scala, and mr job Driver and Reducer class located in
-Begin.scala. The sharding of the database file is done by Hadoop framework, independent of the user. For more detailed information on code and logic, refer to in-file comments.
+**In this assignment, we run a Map/Reduce job in Hadoop on the dblp.xml database. My Mapper is located in hw2Mapper.scala, and mr job Driver and Reducer class located in Begin.scala. The sharding of the database file is done by Hadoop framework, independent of the user. For more detailed information on code and logic, refer to in-file comments.**
 
-Folder "/StatsForViewing/CSVStats/" holds my csv stat files, as well as a compressed "part-r-00000" file (part-r-00000.tar.gz) in case user would like to view stats without running entire M/R job.**
+**Folder "/StatsForViewing/CSVStats/" holds my csv stat files, as well as a compressed "part-r-00000" file (part-r-00000.tar.gz) in case user would like to view stats without running entire M/R job.**
 
 # To run entire M/R Program follow below, continue reading
 
