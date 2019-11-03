@@ -9,27 +9,27 @@
 
 # Instructions to run Hadoop M/R Job and produce .csv stat files from job's output:
 
-#1.) 
+# 1.) 
 run 
 
     sbt assembly
 
    This will compile code, run unit tests, and produce a jar executable
 
-#2.) 
+# 2.) 
 Take jar file 
 
      Moin_Vahora_HW2-assembly-1.0.jar
  located in /target/scala-2.12
 and move to environment with hadoop (your VM)
 
-#3.) 
+# 3.) 
 run 
     
     chmod 777 Moin_Vahora_HW2-assembly-1.0.jar 
    This is to give the jar the needed access rights
 
-#4.) 
+# 4.) 
 run 
 
     hadoop jar Moin_Vahora_HW2-assembly-1.0.jar MoinMapReduce.Begin [DBLP.xmlInput_Directory] [OUTPUT_DIRECTORY] 
@@ -52,7 +52,7 @@ This file contains <Key, Value> pairs
 
    Feel free to look over this file and stats before moving forward
     
-#5.) 
+# 5.) 
 Once job is done, take the produced 
 
     part-r-00000
@@ -71,7 +71,7 @@ in the same directory
    **NOTE: Again, I have provided a compressed 
 "part-r-00000" file (part-r-00000.tar.gz) in the "StatsForViewing/CSVStats" folder for convience reasons. Feel free to use this file if you would like to save time/only care about the statistics produced.** 
 
-#6.) 
+# 6.) 
 Once the "part-r-00000" is in the same directory as "produceStats.scala"
     run the command: "make build" to compile
     next, run the command: "make run" 
