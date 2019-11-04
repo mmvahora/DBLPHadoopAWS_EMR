@@ -1,3 +1,17 @@
+/*
+Moin Vahora
+
+This progam ticks the "vizualzation" requirment of the required homework functionality by producing csv files/tables with
+various stats, see:
+https://piazza.com/class/jzfqyf0i3twzp?cid=256
+This is a simple program which will open the "part-r-00000" file which was produced from 
+the M/R job. Make sure the file is name exactly "part-r-00000" and is in
+the same directory as this file and the makefile
+
+This program opens the file, reads each line, records data while reading,
+and then finally outputs multiple (9) .csv files 
+*/
+
 import scala.xml.XML
 import scala.io.{Source, BufferedSource}
 import java.nio.file.{Files, Path, Paths}
@@ -6,17 +20,20 @@ import java.io._
 
 object produceStats {
   
+  //class for an entry, each entry has an author name, score, coauthor avg, coauthor min, and total entries
   case class Person(name: String, score: Double, avg: Double, max: Int, min: Int, tot: Int)
 
   def main(args: Array[String]): Unit = {
 
-
+    //some vars are needed to build stats
     var test = List[Person]()
+
+    //open and reach file
     val filename = "part-r-00000"
     
     val source: BufferedSource = scala.io.Source.fromFile(filename)
-    var c=0
 
+    //bins for histograms
     var bin1=0;
     var bin2=0;
     var bin3=0;
@@ -29,12 +46,12 @@ object produceStats {
     var abin4=0;
     var abin5=0;
 
+    //read each line of file
     for (line <- source.getLines) 
     {
+      //parse for each value, save into val
       val entry = line.split(",").map(_.trim).toList
-      c=c+1
 
-      
       val it = entry.iterator
       val name = it.next().toString
       val score = it.next().toDouble
@@ -43,6 +60,7 @@ object produceStats {
       val min=it.next().toInt
       val tot=it.next().toInt
       
+      //the following if statements deal with building stats for both histograms, bins partioned manually
       if (score <=85 )
       {
         bin1=bin1+1
@@ -93,20 +111,23 @@ object produceStats {
         abin5=abin5+1
       }
 
+      //build a person from the entry stats, append to list
       test =Person(name, score, avg, max, min, tot) :: test
       
     }
+    //close file once done
     source.close
 
-
-    val sorted=test.sortBy(x => (x.score)) //works
-    val sorted2= sorted.reverse //works
+    //take the list and make sorted lists from them based on the stat we want to sort by
+    val sorted=test.sortBy(x => (x.score)) 
+    val sorted2= sorted.reverse 
     val sorted3= test.sortBy(x => (x.min)).reverse
-    val sorted4=test.sortBy(x => (x.max)).reverse //works
+    val sorted4=test.sortBy(x => (x.max)).reverse 
     val sorted5=test.sortBy(x => (x.tot)).reverse
-    val sorted6=test.sortBy(x => (x.avg)).reverse //works
+    val sorted6=test.sortBy(x => (x.avg)).reverse 
     val sorted7=test.sortBy(x => (x.avg))
 
+    //here are the 9 files we will produce 
     val file = new File("bot100AuthorshipScores.csv")
     val bw = new BufferedWriter(new FileWriter(file))
 
@@ -134,6 +155,7 @@ object produceStats {
     val file9 = new File("totalEntriesHistogram.csv")
     val bw9 = new BufferedWriter(new FileWriter(file9))
 
+    //bins have been processed already, so we can build and write the histogram CSVs first
     bw8.write("0-85" + ", " + bin1 + "\n")
     bw8.write("86-170" + ", " + bin2 + "\n")
     bw8.write("171-255" + ", " + bin3 + "\n")
@@ -148,7 +170,7 @@ object produceStats {
 
     
 
-
+    //make an iterator for each sorted list, this is for top/bot 100 stats
     var count = 1;
     val finalIt= sorted.iterator
     val finalIt2= sorted2.iterator
@@ -159,6 +181,7 @@ object produceStats {
     val finalIt7= sorted7.iterator
     while (count <= 100)
     {
+      //get the 1st 100 values from each sorted list and write to their respective file
       val user = finalIt.next()
       val user2 = finalIt2.next()
       val user3 = finalIt3.next()
@@ -176,6 +199,8 @@ object produceStats {
       count=count+1
       
     }
+
+    //close all files to free resources and write
     bw.close()
     bw2.close()
     bw3.close()
