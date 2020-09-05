@@ -1,5 +1,5 @@
 # Moin Vahora
-# CS 441 HW2: Map/Reduce in Hadoop
+# Map/Reduce in Hadoop
 
 **In this assignment, we run a Map/Reduce job in Hadoop on the dblp.xml database. My Mapper is located in hw2Mapper.scala, and my job Driver and Reducer class located in Begin.scala. The sharding of the database file is done by Hadoop framework, independent of the user. The mapper reads in the XML, parses for authors,and then builds stats based on the entry. The <Key, Value> pair of my M/R job is <Text, Text> so I can store multiple comma separated values. The Key will be the author name, the Value will be AuthorshipScore, AvgCoAuthors, MaxCoAuthors, MinCoAuthors, and TotalEntries.  For more detailed information on code and logic, refer to in-file comments.**
 
@@ -102,7 +102,7 @@ Once the "part-r-00000" is in the same directory as "produceStats.scala"
 
 2.) Open IntelliJ, select "Import Project"
 
-3.) Select directory "moin_vahora_hw1"
+3.) Select directory "moin_vahora_hw2"
 
 4.) Select "Import project from extrernal model", select "SBT" and press next
 
