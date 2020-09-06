@@ -65,7 +65,7 @@ Once job is done, take the produced
     part-r-00000
  file (make sure the file is named exactly like that, "part-r-0000", rename if not) and move it to 
 
-    DBLPJob/StatsForViewing/ 
+    StatsForViewing/ 
 
 there should be
     
