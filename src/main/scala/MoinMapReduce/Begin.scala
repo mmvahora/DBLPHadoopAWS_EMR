@@ -60,7 +60,7 @@ object Begin {
     mapReduceJob.setJarByClass(this.getClass)
 
     //Here we set up our mapper
-    mapReduceJob.setMapperClass(classOf[hw2Mapper])
+    mapReduceJob.setMapperClass(classOf[DBLPMapper])
     myLogger.info("Mapper set")
 
     //Use MahoutModifiedXMLInputFormat as XML input format class

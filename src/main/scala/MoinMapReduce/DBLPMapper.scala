@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory
 import scala.xml.XML
 
 
-class hw2Mapper extends Mapper[LongWritable, Text, Text, Text] {
+class DBLPMapper extends Mapper[LongWritable, Text, Text, Text] {
 
   val myLogger: Logger = LoggerFactory.getLogger(this.getClass)
   val dtdFilePath = getClass.getClassLoader.getResource("dblp.dtd").toURI

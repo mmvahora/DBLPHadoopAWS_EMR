@@ -6,13 +6,13 @@ Scala unit tests
 No comments, should be self explanatory just from unit test naming
 */
 
-import MoinMapReduce.hw2Mapper
+import MoinMapReduce.DBLPMapper
 import com.typesafe.config.ConfigFactory
 import org.scalatest.FlatSpec
 
 class unitTest extends FlatSpec {
     val conf = ConfigFactory.load("tagConfig")
-    val mapper = new hw2Mapper
+    val mapper = new DBLPMapper
 
     "Load config" should "load name" in 
     {
