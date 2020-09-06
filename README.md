@@ -102,7 +102,7 @@ Once the "part-r-00000" is in the same directory as "produceStats.scala"
 
 2.) Open IntelliJ, select "Import Project"
 
-3.) Select directory "DBLPJob"
+3.) Select directory "DBLPHadoopAWS_EMR"
 
 4.) Select "Import project from extrernal model", select "SBT" and press next
 
