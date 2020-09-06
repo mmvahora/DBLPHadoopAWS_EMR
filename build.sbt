@@ -1,4 +1,4 @@
-name := "Moin_Vahora_HW2"
+name := "DBLPJob"
 
 version := "1.0"
 

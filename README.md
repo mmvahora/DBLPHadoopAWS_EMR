@@ -26,24 +26,24 @@ run
 # 2.) 
 Take jar file 
 
-     Moin_Vahora_HW2-assembly-1.0.jar
+     DBLPJob-assembly-1.0.jar
  located in /target/scala-2.12
 and move to environment with hadoop (your VM)
 
 # 3.) 
 run 
     
-    chmod 777 Moin_Vahora_HW2-assembly-1.0.jar 
+    chmod 777 DBLPJob-assembly-1.0.jar 
    This is to give the jar the needed access rights
 
 # 4.) 
 run 
 
-    hadoop jar Moin_Vahora_HW2-assembly-1.0.jar MoinMapReduce.Begin [DBLP.xmlInput_Directory] [OUTPUT_DIRECTORY] 
+    hadoop jar DBLPJob-assembly-1.0.jar MoinMapReduce.Begin [DBLP.xmlInput_Directory] [OUTPUT_DIRECTORY] 
 
   An example would like this:
 
-    hadoop jar Moin_Vahora_HW2-assembly-1.0.jar MoinMapReduce.Begin /tmp/data /tmp/output
+    hadoop jar DBLPJob-assembly-1.0.jar MoinMapReduce.Begin /tmp/data /tmp/output
 
    This will run the M/R job and produce a file:
 
@@ -65,7 +65,7 @@ Once job is done, take the produced
     part-r-00000
  file (make sure the file is named exactly like that, "part-r-0000", rename if not) and move it to 
 
-    moin_vahora_HW2/StatsForViewing/ 
+    DBLPJob/StatsForViewing/ 
 
 there should be
     
@@ -102,7 +102,7 @@ Once the "part-r-00000" is in the same directory as "produceStats.scala"
 
 2.) Open IntelliJ, select "Import Project"
 
-3.) Select directory "moin_vahora_hw2"
+3.) Select directory "DBLPJob"
 
 4.) Select "Import project from extrernal model", select "SBT" and press next
 
